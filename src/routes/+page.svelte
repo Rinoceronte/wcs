@@ -30,7 +30,7 @@
 		.hero {
 			display: grid;
 			gap: 1rem;
-			padding: 1rem;
+			padding: 12rem 1rem;
 			place-items: center;
 
 			/* Set the background image */
@@ -54,6 +54,14 @@
 			h2,
 			p {
 				text-align: center;
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+		.home-page {
+			.hero {
+				padding: 1rem;
 			}
 		}
 	}
