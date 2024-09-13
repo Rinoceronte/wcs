@@ -1,0 +1,180 @@
+@font-face {
+  font-family: 'Excon';
+  src: url('/src/assets/fonts/Excon-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Excon';
+  src: url('/src/assets/fonts/Excon-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Excon';
+  src: url('/src/assets/fonts/Excon-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Excon';
+  src: url('/src/assets/fonts/Excon-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Excon';
+  src: url('/src/assets/fonts/Excon-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Excon';
+  src: url('/src/assets/fonts/Excon-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background-dark: #000;
+    --neutral-dark: #222;
+    --dark-gray: #333;
+    --medium-gray: #666;
+    --light-gray: #999;
+    --neutral-text: #aaa;
+    --primary-text: #fff;
+    --secondary-text: #000;
+    --gradient: linear-gradient(90deg, #FF0163 0%, #CD01FF 100%);
+    --purple: #9747FF;
+    --primary: #FF0163;
+    --secondary: #CD01FF;
+    --tertiary: #FFC107;
+    --hover-color: #FF4F8B;
+  }
+ 
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5 {
+    @apply font-bold text-left;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  p {
+    @apply font-normal text-left;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+
+  .text-small {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+  }
+
+  .text-regular {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+    .error-message: {
+      color: #f00;
+    }
+  }
+
+  input {
+    padding: .75rem;
+    border: 1px solid #666666;
+    background: var(--background-dark);
+    color: var(--primary-text);
+  }
+}
+
+  /* Components layer for buttons and other reusable components */
+  @layer components {
+    button {
+      border-radius: 0.25rem;
+      padding: 0.5rem 1rem;
+      height: fit-content;
+      transition: background-color 0.3s, color 0.3s;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      font-weight: 700;
+
+      
+  
+      &:disabled {
+        @apply opacity-50 cursor-not-allowed;
+      }
+
+      &.primary {
+        background: var(--gradient);   
+        &:hover {
+          background: var(--hover-color);
+        }
+      }
+
+      &.secondary {
+        background: var(--neutral-dark);
+        border: 1px solid var(--primary-text);
+        &:hover {
+          background: var(--primary-text);
+          color: var(--background-dark);
+        }
+      }
+    }
+
+
+  }
+
+  html, body {
+    font-family: 'Excon', sans-serif;
+    background-color: var(--background-dark);
+    color: var(--primary-text);
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 2.5rem;
+      line-height: 3rem;
+    }
+    h2 {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+  }
